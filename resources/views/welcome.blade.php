@@ -135,6 +135,8 @@
 
           echo '<br><br>';
           print_r($shop['api_key']);
+          
+          echo Auth::user()->email;
 
 
 
