@@ -22,6 +22,6 @@ Route::get('/', function () {
     return view('orders');
 })->middleware(['auth.shopify'])->name('home');*/
 
-Route::post("order",[OrdersController::class,'testRequest']);
+Route::get("order",[OrdersController::class,'testRequest']);
 
 Route::view("orders",'orders');
