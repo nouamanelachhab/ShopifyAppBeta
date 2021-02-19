@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->middleware(['auth.shopify'])->name('home');
+
+/*Route::get('/orders', function () {
+    return view('orders');
+})->middleware(['auth.shopify'])->name('home');*/
+
+Route::post("order",[OrdersController::class,'testRequest']);
+
+Route::view("orders",'orders');
