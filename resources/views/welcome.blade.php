@@ -44,7 +44,7 @@
             $shop = Auth::user();
             $tags = $shop->api()->rest('GET','/admin/script_tags.json');
             //$snippet = "https://cdn.shopify.com/s/files/1/0533/0947/2923/files/test.js?v=1612889269";
-            $snippet = "https://cdn.shopify.com/s/files/1/0506/1908/9103/files/form.js?v=1613400115";
+            $snippet = "https://cdn.shopify.com/s/files/1/0538/8405/9842/files/mowr.js?v=1613821601";
        
 
           // $arr = array('script_tag'=>array('event'=>'onload','src' =>$snippet));
@@ -54,11 +54,11 @@
 
            // $shop -> api()-> rest ('PUT', '/admin/api/2021-01/script_tags/148856733851.json',$arr);
            //Delete Request
-        // $shop -> api()-> rest ('DELETE', '/admin/api/2021-01/script_tags/130086043855.json');
-      
+       //   $shop -> api()-> rest ('DELETE', '/admin/api/2021-01/script_tags/162229420226.json');
+         
           $arr = array('script_tag'=>array('event'=>'onload','src' =>$snippet));
 
-        // $shop -> api()-> rest ('POST', '/admin/api/2021-01/script_tags.json' , $arr); 
+         // $shop -> api()-> rest ('POST', '/admin/api/2021-01/script_tags.json' , $arr); 
 
 
 

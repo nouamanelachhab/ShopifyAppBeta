@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrdersController;
 
+
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,4 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Receiving Orders http request from Client
 Route::post("order",[OrdersController::class,'testRequest']);
