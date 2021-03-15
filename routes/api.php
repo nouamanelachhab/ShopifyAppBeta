@@ -23,4 +23,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //Receiving Orders http request from Client
-Route::post("order",[OrdersController::class,'testRequest']);
+Route::post("order",[OrdersController::class,'newOrder']);

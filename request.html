@@ -9,7 +9,7 @@
     var xhttp = new XMLHttpRequest();
 
         // j'envoie une requete http de type POST vers un serveur
-        xhttp.open("POST", "https//www.google.com", true);
+        xhttp.open("POST", "http://d8f388e5998b.ngrok.io/api/order", true);
         
         // Definition de l'entete de la requete
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -27,15 +27,47 @@
                 alert(this.responseText)
             }
 
-            else
-            {
-                console.log("errror");
-            }
         };
 
-        onsole.log("errror");
-
     }
+
+
+    var open = window.XMLHttpRequest.prototype.open,
+  send = window.XMLHttpRequest.prototype.send;
+
+function openReplacement(method, url, async, user, password) {
+  this._url = url;
+  return open.apply(this, arguments);
+}
+
+function sendReplacement(data) {
+  if(this.onreadystatechange) {
+    this._onreadystatechange = this.onreadystatechange;
+  }
+  /**
+   * PLACE HERE YOUR CODE WHEN REQUEST IS SENT  
+   */
+  
+   console.log("Request Started");
+
+
+  this.onreadystatechange = onReadyStateChangeReplacement;
+  return send.apply(this, arguments);
+}
+
+function onReadyStateChangeReplacement() {
+  /**
+   * PLACE HERE YOUR CODE FOR READYSTATECHANGE
+   */
+
+   console.log("sent request");
+  if(this._onreadystatechange) {
+    return this._onreadystatechange.apply(this, arguments);
+  }
+}
+
+window.XMLHttpRequest.prototype.open = openReplacement;
+window.XMLHttpRequest.prototype.send = sendReplacement;
         </script>
 </head>
 <body>
